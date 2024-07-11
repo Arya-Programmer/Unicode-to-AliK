@@ -7,7 +7,11 @@ export default function Home() {
     <>
       <Navbar/>
       <main className={styles.main}>
-        <Textarea/>
+        <h1 style={{gridColumn: "1 / span 2"}}>
+          گۆڕینی نووسینی لە نێوان <span>AliK</span> و <span>Unicode</span>
+        </h1>
+        <Textarea isUnicode/>
+        <Textarea isUnicode={false}/>
       </main>
     </>
   );

@@ -1,0 +1,8 @@
+.textarea {
+    background: #2c97ec;
+    color: white;
+    resize: vertical;
+    opacity: 0.12;
+    width: 97%;
+    height: 300px;
+}
