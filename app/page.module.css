@@ -8,3 +8,13 @@
   padding: 0 16% 0 16%;
   grid-template-columns: auto auto;
 }
+
+.title {
+  font-family: 'Peshang des 2', Calibri, 'Trebuchet MS', sans-serif;
+  grid-column: 1 / span 2;
+}
+
+.title > span {
+  font-family: 'Gill Sans Display MT Pro', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #2c97ec;
+}
