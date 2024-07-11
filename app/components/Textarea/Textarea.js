@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./textarea.module.css";
 
@@ -8,10 +9,12 @@ function Textarea({ isUnicode }) {
   
   const title = isUnicode ? "Unicode" : "AliK"; 
 
+  // const []
+
   return (
     <span className={styles.textareaContainer}>
       <div className={styles.textareaTitle}>{title}</div>
-      <textarea className={styles.textarea} placeholder={placeholder}></textarea>
+      <textarea value="" className={styles.textarea} placeholder={placeholder}></textarea>
     </span>
   );
 }
