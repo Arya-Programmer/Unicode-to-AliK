@@ -24,7 +24,7 @@ Make sure you have the following software installed:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/unicode-to-alik.git
+    git clone https://github.com/arya-programmer/unicode-to-alik.git
     cd unicode-to-alik
     ```
 
