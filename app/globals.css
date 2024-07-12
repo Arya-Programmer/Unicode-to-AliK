@@ -1,9 +1,20 @@
+@font-face {
+  font-family: Peshang;
+  src: url(./Peshang_Des_2.ttf);
+  weight: 400
+}
+@font-face {
+  font-family: Gill;
+  src: url(./GillSansDisplayMTPro.otf);
+  weight: 400
+}
+
 * {
   direction: rtl;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Peshang des 2', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Peshang, Calibri, 'Trebuchet MS', sans-serif;
 }
 
 html,

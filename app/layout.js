@@ -1,22 +1,6 @@
-import localFont from 'next/font/local'
 import Providers from "./StoreProvider";
 
 import "./globals.css";
-
-const customFonts = localFont({
-  src: [
-    {
-      path: './GillSansDisplayMTPro.otf',
-      weight: '400',
-      style: 'Extra Bold',
-    },
-    {
-      path: './Peshang_Des_2.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-  ]
-});
 
 export const metadata = {
   title: "AliK - Unicode",
@@ -42,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <Providers>
       <html lang="ar">
-        <body className={customFonts.className}>{children}</body>
+        <body>{children}</body>
       </html>
     </Providers>
   );
