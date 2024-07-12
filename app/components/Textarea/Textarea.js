@@ -40,7 +40,7 @@ const Textarea = ({ isUnicode }) => {
   }
 
   const copyTextareaValue = () => {
-    navigator.clipboard.writeText(textareaValue).then(_ => _);
+    navigator.clipboard.writeText(isUnicode ? textareaValue.unicode : textareaValue.alik);
   }
 
   const pasteTextareaValue = () => {
