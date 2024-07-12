@@ -39,12 +39,13 @@ const Textarea = ({ isUnicode }) => {
     setTextareaValue(updatedValue);
   }
 
-  const copyTextareaValue = async () => {
-    await navigator.clipboard.writeText(textareaValue).then(_ => _);
+  const copyTextareaValue = () => {
+    navigator.clipboard.writeText(textareaValue).then(_ => _);
   }
 
   const pasteTextareaValue = () => {
     navigator.clipboard.readText().then(data => {
+      console.log("PASTE TEXT AREA", data);
       onTextareaChangehandler({ target: { value: data }});
     });
   }

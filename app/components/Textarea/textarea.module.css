@@ -27,9 +27,9 @@
     display: grid;
     grid-template-columns: auto auto;
     /* justify-content: space-evenly; */
-    margin-top: -35px;
+    margin-top: -40px;
     border-radius: 18px 0 18px 0;
-    box-shadow: black -3px -3px 10px 0px;
+    box-shadow: rgb(44, 151, 236) -1px -1px 5px 0px;
     width: 90px;
     height: 30px;
 }
