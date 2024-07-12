@@ -40,7 +40,7 @@ const Textarea = ({ isUnicode }) => {
   }
 
   const copyTextareaValue = () => {
-    navigator.clipboard.writeText(textareaValue).then(_ => {console.log("Text copied!")});
+    navigator.clipboard.writeText(textareaValue).then(_ => _);
   }
 
   const pasteTextareaValue = () => {
