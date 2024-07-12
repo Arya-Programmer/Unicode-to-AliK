@@ -7,6 +7,8 @@ This Next.js project provides a simple web interface for converting text between
 - Convert text from Unicode to AliK writing style.
 - Convert text from AliK to Unicode writing style.
 - Simple and user-friendly interface.
+- Design:
+![Image of design](https://github.com/Arya-Kurdo/Unicode-to-AliK/blob/master/public/Design-unicode-to-alik.png?raw=true)
 
 ## Getting Started
 
