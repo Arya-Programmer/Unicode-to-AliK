@@ -8,7 +8,7 @@ export default function Home() {
       <Navbar/>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          گۆڕینی نووسینی لە نێوان <span>AliK</span> و <span>Unicode</span>
+          گۆڕینی نووسین لە نێوان <span>AliK</span> و <span>Unicode</span>
         </h1>
         <Textarea isUnicode/>
         <Textarea isUnicode={false}/>
