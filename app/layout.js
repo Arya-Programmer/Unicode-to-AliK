@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <Providers>
       <html lang="ar">
-        <body>{children}</body>
+        <body><div>{children}</div></body>
       </html>
     </Providers>
   );
