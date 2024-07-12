@@ -2,10 +2,16 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateConversion } from "<styles>/lib/slices/conversionSlice";
-import styles from "./textarea.module.css";
 import { convertToUnicode, convertToAlik } from "<styles>/app/helper";
 
-function Textarea({ isUnicode }) {
+import CopyIcon from "@mui/icons-material/ContentCopyRounded";
+import PasteIcon from "@mui/icons-material/ContentPasteRounded";
+import { ButtonBase } from "@mui/material";
+
+import styles from "./textarea.module.css";
+
+
+const Textarea = ({ isUnicode }) => {
   const placeholder = isUnicode
     ? "ئەو نووسینەی بە کیبۆردی کوردی نووسیوتە یان بە فۆنتێکی یونیکۆد نووسیوتە لێرە دایبنێ تا بیگۆڕین بە ئەلیکەی"
     : "ئەو نووسینەی بە کیبۆردی عەرەبی نووسیوتە یان بە فۆنتێکی ئەلیکەی نووسیوتە لێرە دایبنێ تا بیگۆڕین بە یونیکۆد";
@@ -31,7 +37,17 @@ function Textarea({ isUnicode }) {
     dispatch(updateConversion(updatedValue));
 
     setTextareaValue(updatedValue);
-  } 
+  }
+
+  const copyTextareaValue = () => {
+    navigator.clipboard.writeText(textareaValue).then(_ => {console.log("Text copied!")});
+  }
+
+  const pasteTextareaValue = () => {
+    navigator.clipboard.readText().then(data => {
+      onTextareaChangehandler({ target: { value: data }});
+    });
+  }
 
   return (
     <span className={styles.textareaContainer}>
@@ -42,6 +58,14 @@ function Textarea({ isUnicode }) {
         className={styles.textarea}
         placeholder={placeholder}
       ></textarea>
+      <div className={styles.actionsContainer}>
+        <ButtonBase onClick={copyTextareaValue} className={styles.copyIcon}>
+          <CopyIcon/>
+        </ButtonBase>
+        <ButtonBase onClick={pasteTextareaValue} className={styles.pasteIcon}>
+          <PasteIcon/>
+        </ButtonBase>
+      </div>
     </span>
   );
 }

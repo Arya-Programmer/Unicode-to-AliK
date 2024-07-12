@@ -22,3 +22,33 @@
     font-family: 'Gill Sans Display MT Pro', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     /* padding: 0 5%; */
 }
+
+.actionsContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    /* justify-content: space-evenly; */
+    margin-top: -35px;
+    border-radius: 18px 0 18px 0;
+    box-shadow: black -3px -3px 10px 0px;
+    width: 90px;
+    height: 30px;
+}
+
+.actionsContainer > * {
+    width: 100%;
+    height: 100%;
+}
+
+.copyIcon {
+    border-radius: 0 0 18px 0;
+}
+.copyIcon > * {
+    margin-left: -3px;
+}
+
+.pasteIcon {
+    border-radius: 18px 0 0 0;
+}
+.pasteIcon > * {
+    margin-right: -3px;
+}
