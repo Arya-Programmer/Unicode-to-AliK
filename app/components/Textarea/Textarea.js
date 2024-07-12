@@ -45,7 +45,7 @@ const Textarea = ({ isUnicode }) => {
 
   const pasteTextareaValue = () => {
     navigator.clipboard.readText().then(data => {
-      console.log("PASTE TEXT AREA", data);
+      // console.log("PASTE TEXT AREA", data);
       onTextareaChangehandler({ target: { value: data }});
     });
   }
