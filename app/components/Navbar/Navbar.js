@@ -1,12 +1,17 @@
+"use client";
 import React from 'react';
 import styles from "./navbar.module.css";
+import { ButtonBase } from "@mui/material";
+import { useRouter } from 'next/navigation';
 
 const Navbar = () => {
+  const { push } = useRouter();
+
   return (
     <nav className={styles.navbar}>
-      <div className={styles.navbarItem}>
+      <ButtonBase className={styles.navbarItem} onClick={e => push("https://aryakurdo.com")}>
         دەربارە
-      </div>
+      </ButtonBase>
     </nav>
   );
 }
