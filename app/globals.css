@@ -3,6 +3,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Peshang des 2', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 html,
@@ -11,4 +12,9 @@ body {
   overflow-x: hidden;
   background-color: #191919;
   color: white;
+  background: url(/peakpx.jpg) center top;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  backdrop-filter: blur(5px);
 }

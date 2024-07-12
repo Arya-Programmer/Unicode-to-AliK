@@ -1,8 +1,22 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
+import localFont from 'next/font/local'
 import Providers from "./StoreProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
+
+const customFonts = localFont({
+  src: [
+    {
+      path: './GillSansDisplayMTPro.otf',
+      weight: '400',
+      style: 'Extra Bold',
+    },
+    {
+      path: './Peshang_Des_2.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ]
+});
 
 export const metadata = {
   title: "AliK - Unicode",
@@ -28,7 +42,7 @@ export default function RootLayout({ children }) {
   return (
     <Providers>
       <html lang="ar">
-        <body className={inter.className}>{children}</body>
+        <body className={customFonts.className}>{children}</body>
       </html>
     </Providers>
   );
