@@ -3,66 +3,166 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Peshang';
-  src: url('/fonts/Peshang_Des_2.ttf');
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Peshang";
+    src: url("/fonts/Peshang_Des_2.ttf");
+    font-weight: 400;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Gill';
-  src: url('/fonts/GillSansDisplayMTPro.otf');
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Gill";
+    src: url("/fonts/GillSansDisplayMTPro.otf");
+    font-weight: 400;
+    font-style: normal;
 }
 
 :root {
-  --primary: #2c97ec;
-  --primary-light: rgba(44, 151, 236, 0.15);
-  --primary-medium: rgba(44, 151, 236, 0.6);
-  --background: #0f172a;
-  --foreground: #f8fafc;
+    --primary: #2c97ec;
+    --primary-light: rgba(44, 151, 236, 0.15);
+    --primary-medium: rgba(44, 151, 236, 0.6);
+    --background-dark: #0f172a;
+    --background-darker: #080d17;
+    --foreground: #f8fafc;
 }
 
 * {
-  direction: rtl;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  z-index: 100;
+    direction: rtl;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Peshang, Calibri, "Trebuchet MS", sans-serif;
+    z-index: 100;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-  background-color: var(--background);
-  color: var(--foreground);
-  background: url(/peakpx.jpg) center top;
-  background-size: cover;
+    max-width: 100vw;
+    overflow-x: hidden;
+    color: white;
 }
 
-body > div {
-  backdrop-filter: blur(5px);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+/* Main background gradient */
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #131c31 50%, #162240 100%);
+    background-attachment: fixed;
+    position: relative;
+}
+
+/* Subtle animated gradient overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, rgba(44, 151, 236, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(44, 151, 236, 0.05) 0%, transparent 50%);
+    z-index: -1;
+    animation: pulse 15s ease-in-out infinite alternate;
+}
+
+/* Subtle grid pattern */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(44, 151, 236, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(44, 151, 236, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+body>div {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+::selection {
+    background-color: rgba(44, 151, 236, 0.3);
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(25, 25, 25, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(44, 151, 236, 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(44, 151, 236, 0.8);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes moveParticle {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(100px, 50px) rotate(90deg);
+    }
+
+    50% {
+        transform: translate(50px, 100px) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(-50px, 50px) rotate(270deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
 }
 
 @layer base {
-  h1 {
-    @apply text-3xl font-bold md:text-4xl;
-  }
-  h2 {
-    @apply text-2xl font-bold md:text-3xl;
-  }
+    h1 {
+        @apply text-3xl font-bold md:text-4xl;
+    }
+
+    h2 {
+        @apply text-2xl font-bold md:text-3xl;
+    }
 }
 
 @layer components {
-  .btn-primary {
-    @apply px-6 py-2 rounded-full bg-primary text-white font-medium transition-all hover:bg-blue-500 focus:ring-2 focus:ring-blue-300 focus:outline-none;
-  }
-  .container-custom {
-    @apply w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16;
-  }
+    .btn-primary {
+        @apply px-6 py-2 rounded-full bg-primary text-white font-medium transition-all hover:bg-blue-500 focus:ring-2 focus:ring-blue-300 focus:outline-none;
+    }
+
+    .container-custom {
+        @apply w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16;
+    }
 }

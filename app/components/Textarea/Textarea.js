@@ -1,7 +1,7 @@
 "use client"
 import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { updateConversion } from "@/lib/slices/conversionSlice"
+import { updateConversion } from "@/lib/slices/conversionSlice.js"
 import { convertToUnicode, convertToAlik } from "@/app/helper"
 import styles from "./textarea.module.css"
 

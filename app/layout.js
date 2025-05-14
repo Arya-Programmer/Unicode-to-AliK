@@ -23,15 +23,16 @@ export const metadata = {
     Our converter stands out due to its reliability and ease of use. Whether you are a developer, linguist, or anyone needing text conversion, our tool provides a hassle-free experience. Say goodbye to compatibility issues and ensure your text is readable and usable everywhere with the AliK to Unicode Converter.`,
 };
 
+
 export default function RootLayout({ children }) {
     return (
-
         <StoreProvider>
             <html lang="ar" className="scroll-smooth">
                 <body className={inter.className}>
-                    <div className="bg-background/80">{children}</div>
+                    <div className="mesh-grid"></div>
+                    <div>{children}</div>
                 </body>
             </html>
         </StoreProvider>
-    );
+    )
 }
