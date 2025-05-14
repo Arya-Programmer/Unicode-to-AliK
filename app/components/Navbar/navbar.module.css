@@ -2,18 +2,121 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 50px;
-    padding: 0 16% 0 16%;
-    /* background-color: #191919; */
-    border-bottom: #191919 2px;
+    height: 70px;
+    padding: 0 16%;
+    background-color: rgba(25, 25, 25, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(44, 151, 236, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.navbarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logoText {
+    font-family: Gill, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c97ec;
+    letter-spacing: 0.5px;
+}
+
+.logoIcon {
+    font-size: 1.2rem;
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.navLinks {
+    display: flex;
+    gap: 20px;
 }
 
 .navbarItem {
+    position: relative;
     font-family: Peshang, Calibri, 'Trebuchet MS', sans-serif;
-    border: #2c97ec 3px solid;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    padding-left: 5%;
-    padding-right: 5%;
-    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+    background: transparent;
+    border: 2px solid #2c97ec;
+    padding: 8px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.buttonText {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.buttonHighlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2c97ec;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.navbarItem:hover {
+    box-shadow: 0 0 15px rgba(44, 151, 236, 0.5);
+}
+
+.navbarItem:hover .buttonHighlight {
+    transform: translateX(0);
+}
+
+.navbarItem:hover .buttonText {
+    color: white;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 5%;
+        height: 60px;
+    }
+
+    .logoText {
+        font-size: 1.2rem;
+    }
+
+    .navbarItem {
+        font-size: 0.9rem;
+        padding: 6px 18px;
+    }
 }
