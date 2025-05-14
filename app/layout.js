@@ -1,10 +1,11 @@
-import Providers from "./StoreProvider";
+import { Inter } from "next/font/google"
+import StoreProvider from "./StoreProvider"
+import "./globals.css"
 
-import "./globals.css";
-
+const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
-  title: "AliK - Unicode",
-  description: `AliK to Unicode Converter\n
+    title: "AliK - Unicode",
+    description: `AliK to Unicode Converter\n
     Welcome to the AliK to Unicode Converter, your go-to tool for seamless text conversion. This online platform is designed to effortlessly transform text encoded in the AliK format into standard Unicode, ensuring compatibility across various systems and applications.\n
     \n
     - Key Features:\n
@@ -23,11 +24,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <Providers>
-      <html lang="ar">
-        <body><div>{children}</div></body>
-      </html>
-    </Providers>
-  );
+    return (
+
+        <StoreProvider>
+            <html lang="ar" className="scroll-smooth">
+                <body className={inter.className}>
+                    <div className="bg-background/80">{children}</div>
+                </body>
+            </html>
+        </StoreProvider>
+    );
 }
