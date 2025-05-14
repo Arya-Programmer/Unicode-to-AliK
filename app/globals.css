@@ -1,12 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
-  font-family: Peshang;
-  src: url(./Peshang_Des_2.ttf);
-  weight: 400
+  font-family: 'Peshang';
+  src: url('/fonts/Peshang_Des_2.ttf');
+  font-weight: 400;
+  font-style: normal;
 }
+
 @font-face {
-  font-family: Gill;
-  src: url(./GillSansDisplayMTPro.otf);
-  weight: 400
+  font-family: 'Gill';
+  src: url('/fonts/GillSansDisplayMTPro.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --primary: #2c97ec;
+  --primary-light: rgba(44, 151, 236, 0.15);
+  --primary-medium: rgba(44, 151, 236, 0.6);
+  --background: #0f172a;
+  --foreground: #f8fafc;
 }
 
 * {
@@ -14,7 +29,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: Peshang, Calibri, 'Trebuchet MS', sans-serif;
   z-index: 100;
 }
 
@@ -22,13 +36,33 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: #191919;
-  color: white;
+  background-color: var(--background);
+  color: var(--foreground);
   background: url(/peakpx.jpg) center top;
   background-size: cover;
 }
 
 body > div {
-  backdrop-filter: blur(3px);
-  height: 100vh;
+  backdrop-filter: blur(5px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl font-bold md:text-4xl;
+  }
+  h2 {
+    @apply text-2xl font-bold md:text-3xl;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-2 rounded-full bg-primary text-white font-medium transition-all hover:bg-blue-500 focus:ring-2 focus:ring-blue-300 focus:outline-none;
+  }
+  .container-custom {
+    @apply w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16;
+  }
 }
