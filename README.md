@@ -10,6 +10,9 @@ This Next.js project provides a simple web interface for converting text between
 - Design:
 ![Image of design](https://github.com/Arya-Programmer/Unicode-to-AliK/blob/master/public/Design-unicode-to-alik.png)
 
+- New Design:
+![u2a aryakurdo com_](https://github.com/user-attachments/assets/421dd670-b5fe-44cc-b101-52cb19973252)
+
 ## Getting Started
 
 These instructions will help you set up the project locally for development and testing purposes.
